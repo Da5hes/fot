@@ -1,0 +1,9 @@
+[submodule "FOT"]
+	path = fot-fuzz
+	url = git@github.com:HongxuChen/FOT.git
+[submodule "fot-ui"]
+	path = fot-ui
+	url = git@github.com:ThePatrickStar/fot-ui.git
+[submodule "fot-clang"]
+	path = fot-clang
+	url = git@github.com:ThePatrickStar/fot-clang.git
