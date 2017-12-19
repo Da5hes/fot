@@ -6,4 +6,4 @@
 	url = git@github.com:ThePatrickStar/fot-ui.git
 [submodule "fot-clang"]
 	path = fot-clang
-	url = git@github.com:ThePatrickStar/fot-clang.git
+	url = git@github.com:ThePatrickStar/fot-instrument.git
