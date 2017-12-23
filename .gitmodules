@@ -1,6 +1,6 @@
 [submodule "FOT"]
 	path = fot-fuzz
-	url = git@github.com:HongxuChen/FOT.git
+	url = git@github.com:HongxuChen/fot-fuzz.git
 [submodule "fot-ui"]
 	path = fot-ui
 	url = git@github.com:ThePatrickStar/fot-ui.git
