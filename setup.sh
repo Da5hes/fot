@@ -1,38 +1,61 @@
 #!/usr/bin/env bash
 
+red=`tput setaf 1`
+green=`tput setaf 2`
+reset=`tput sgr0`
+
 set -ex
 
 # dependencies
-echo "[x] install general dependencies..."
+echo "${green}[x] install general dependencies...${reset}"
 sudo apt install -y cmake python-pip libspdlog-dev redis-tools redis-server liblzma-dev libhwloc-dev libc6-dev-i386 golang curl realpath
-go get -u -v github.com/go-task/task/cmd/task
-cargo install --force cargo-deb
 sudo pip install -U virtualenv
 
+if hash task 2>/dev/null; then
+    echo "golang 'task runner' (task) found"
+else
+    export GOPATH=$HOME/gocode
+    echo "${red}PLEASE 'export GOPATH=$HOME/gocode' for permanent use${reset}"
+    mkdir -p $GOPATH
+    go get -u -v github.com/go-task/task/cmd/task
+    export PATH=$GOPATH/bin:$PATH
+    echo "${red} PLEASE 'export PATH=$GOPATH/bin:$PATH' for permanent use${reset}"
+fi
 BASEDIR=$(realpath $(dirname "$0"))
 
-echo "[x] install rust toolchain with rustup..."
-curl https://sh.rustup.rs -sSf -o /tmp/fot-rustup.sh
-sh /tmp/fot-rustup.sh --default-toolchain=nightly
-echo "export PATH=\"$HOME/.cargo/bin:$PATH\"" >> $HOME/.bashrc
+echo "${green}[x] install rust toolchain with rustup...${reset}"
+if hash cargo 2>/dev/null; then
+    echo "cargo path found, make sure you are using 'nightly' version!"
+    if hash cargo-deb 2>/dev/null; then
+        echo "cargo-deb found"
+    else
+        cargo install --force cargo-deb
+    fi
+else
+    curl https://sh.rustup.rs -sSf -o /tmp/fot-rustup.sh
+    sh /tmp/fot-rustup.sh --default-toolchain=nightly
+    export PATH=$HOME/.cargo/bin:$PATH
+    echo "${red}PLEASE export PATH=\"$HOME/.cargo/bin:$PATH\" for permanent use${reset}"
+    cargo install --force cargo-deb
+fi
 echo -e "[+] general dependencies done\n"
 
 
 # fot-instrument
-echo "[x] install fot-instrument utilities..."
+echo "${green}[x] install fot-instrument utilities...${reset}"
 cd ${BASEDIR}/fot-instrument
 make
 sudo make install
 echo -e "[+] fot-instrument done!\n"
 
 # fot-fuzz
-echo "[x] install fot-fuzz utilities..."
+echo "${green}[x] install fot-fuzz utilities...${reset}"
 cd ${BASEDIR}/fot-fuzz
 task install
 echo -e "[+] fot-fuzz done!\n"
 
 # fot-ui
-echo "[x] set up fot-ui..."
+echo "${green}[x] set up fot-ui...${reset}"
 cd ${BASEDIR}/fot-ui
 if ! [ -d env ]; then
   virtualenv env
