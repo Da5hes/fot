@@ -7,3 +7,6 @@
 [submodule "fot-instrument"]
 	path = fot-instrument
 	url = git@github.com:ThePatrickStar/fot-instrument.git
+[submodule "fot-sem"]
+	path = fot-sem
+	url = git@github.com:HongxuChen/fot-sem.git
