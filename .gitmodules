@@ -1,9 +1,9 @@
-[submodule "FOT"]
+[submodule "fot-fuzz"]
 	path = fot-fuzz
 	url = git@github.com:HongxuChen/fot-fuzz.git
 [submodule "fot-ui"]
 	path = fot-ui
 	url = git@github.com:ThePatrickStar/fot-ui.git
-[submodule "fot-clang"]
+[submodule "fot-instrument"]
 	path = fot-instrument
 	url = git@github.com:ThePatrickStar/fot-instrument.git
