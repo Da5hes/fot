@@ -6,7 +6,7 @@ source ${_CUR_DIR}/common.sh
 set -e
 
 # fot-ui
-echo -e "\n${green}[x] set up fot-ui...${reset}"
+fot_setup_header "fot-ui"
 cd ${BASEDIR}/fot-ui
 if ! [ -d env ]; then
   virtualenv env
@@ -15,9 +15,9 @@ if ! [ -d env ]; then
 fi
 cd ${BASEDIR}/fot-ui/fuzzer_ui
 python manage.py migrate
-echo -e "[+] fot-ui setup done!\n"
-echo -e "${green}[x] fot-ui is started by the following commands${reset}"
-echo -e "# set virtual environment\n\
+fot_setup_footer "fot-ui"
+fot_setup_alert "${yellow}fot-ui is started by the following commands\n\
+# set virtual environment\n\
 $ source ../env/bin/activate\n\
 # web service\n\
 $ python manage.py runserver 0.0.0.0:8000 --no-reload\n\

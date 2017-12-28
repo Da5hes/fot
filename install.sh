@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 BASEDIR=$(dirname "$0")/setup
 
 ${BASEDIR}/0-deps.sh
