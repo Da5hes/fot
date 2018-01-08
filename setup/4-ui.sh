@@ -11,9 +11,9 @@ cd ${BASEDIR}/fot-ui
 if ! [ -d env ]; then
   virtualenv env
   . env/bin/activate
-  pip install -r requirements.txt
 fi
 cd ${BASEDIR}/fot-ui/fuzzer_ui
+pip install -r requirements.txt
 python manage.py migrate
 fot_setup_footer "fot-ui"
 fot_setup_alert "${yellow}fot-ui is started by the following commands\n\
