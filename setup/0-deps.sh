@@ -7,7 +7,7 @@ set -e
 
 fot_setup_header "dependencies"
 fot_setup_header "OS-level dependencies"
-sudo apt install -y cmake python-pip libspdlog-dev redis-tools redis-server liblzma-dev libhwloc-dev libc6-dev-i386 golang curl realpath
+sudo apt install -y cmake python-pip libspdlog-dev redis-tools redis-server liblzma-dev libhwloc-dev libc6-dev-i386 golang curl realpath scons
 sudo pip install -U virtualenv
 fot_setup_ensure_exec "go"
 fot_setup_footer "OS-level dependencies"
