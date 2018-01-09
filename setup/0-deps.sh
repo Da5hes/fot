@@ -16,7 +16,7 @@ fot_setup_footer "OS-level dependencies"
 fot_setup_header "golang dependencies"
 if ! hash task 2>/dev/null; then
     export GOPATH=$HOME/gocode
-    fot_setup_alert "PLEASE 'export GOPATH=$HOME/gocode' for permanent uses"
+    fot_setup_alert "PLEASE 'export GOPATH=\$HOME/gocode' for permanent uses"
     mkdir -p $GOPATH
     go get -u -v github.com/go-task/task/cmd/task
     fot_setup_ensure_exec "task"
@@ -37,7 +37,7 @@ else
     curl https://sh.rustup.rs -sSf -o /tmp/fot-rustup.sh
     sh /tmp/fot-rustup.sh --default-toolchain=nightly
     export PATH=$HOME/.cargo/bin:$PATH
-    echo "${red}PLEASE export PATH=\"\$HOME/.cargo/bin:\$PATH\" for permanent use${reset}"
+    fot_setup_alert "PLEASE export PATH=\"\$HOME/.cargo/bin:\$PATH\" for permanent uses"
     cargo install --force cargo-deb
 fi
 
