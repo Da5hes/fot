@@ -8,7 +8,7 @@ installation
 ====================
 
 ```
-./setup.sh
+./install.sh
 ```
 
 user interface

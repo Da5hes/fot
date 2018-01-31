@@ -7,8 +7,17 @@ set -e
 
 fot_setup_header "dependencies"
 fot_setup_header "OS-level dependencies"
-sudo apt install -y cmake python-pip libspdlog-dev redis-tools redis-server liblzma-dev libhwloc-dev libc6-dev-i386 golang curl realpath scons
+sudo apt install -y cmake python-pip libspdlog-dev \
+                    redis-tools redis-server \
+                    liblzma-dev libhwloc-dev libc6-dev-i386 \
+                    curl realpath scons
 sudo pip install -U virtualenv
+sudo apt-get purge -y golang-go
+sudo wget https://dl.google.com/go/go1.9.3.linux-amd64.tar.gz
+sudo tar -xvf go1.9.3.linux-amd64.tar.gz
+sudo mv go /usr/local
+export GOROOT=/usr/local/go
+export PATH=/usr/local/go/bin:$PATH
 fot_setup_ensure_exec "go"
 fot_setup_footer "OS-level dependencies"
 
@@ -19,8 +28,8 @@ if ! hash task 2>/dev/null; then
     fot_setup_alert "PLEASE 'export GOPATH=\$HOME/gocode' for permanent uses"
     mkdir -p $GOPATH
     go get -u -v github.com/go-task/task/cmd/task
-    fot_setup_ensure_exec "task"
     export PATH=$GOPATH/bin:$PATH
+    fot_setup_ensure_exec "task"
     fot_setup_alert "PLEASE 'export PATH=\$GOPATH/bin:$PATH' for permanent uses"
 fi
 fot_setup_ensure_exec "task"
