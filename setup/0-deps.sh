@@ -13,11 +13,18 @@ sudo apt install -y cmake python-pip libspdlog-dev \
                     curl realpath scons
 sudo pip install -U virtualenv
 sudo apt-get purge -y golang-go
-sudo wget https://dl.google.com/go/go1.9.3.linux-amd64.tar.gz
+if [ -f "go1.9.3.linux-amd64.tar.gz" ]
+then
+    echo "go1.9.3.linux-amd64.tar.gz already downloaded."
+else
+    sudo wget https://dl.google.com/go/go1.9.3.linux-amd64.tar.gz
+fi
 sudo tar -xvf go1.9.3.linux-amd64.tar.gz
-sudo mv go /usr/local
-export GOROOT=/usr/local/go
-export PATH=/usr/local/go/bin:$PATH
+sudo rm -rf /usr/local/go
+sudo rm -rf /usr/local/lib/go
+sudo mv go /usr/local/lib
+#export GOROOT=/usr/local/lib/go
+#export PATH=/usr/local/lib/go/bin:$PATH
 fot_setup_ensure_exec "go"
 fot_setup_footer "OS-level dependencies"
 
@@ -44,7 +51,7 @@ if hash cargo 2>/dev/null; then
     fi
 else
     curl https://sh.rustup.rs -sSf -o /tmp/fot-rustup.sh
-    sh /tmp/fot-rustup.sh --default-toolchain=nightly
+    sh /tmp/fot-rustup.sh -y --default-toolchain=nightly
     export PATH=$HOME/.cargo/bin:$PATH
     fot_setup_alert "PLEASE export PATH=\"\$HOME/.cargo/bin:\$PATH\" for permanent uses"
     cargo install --force cargo-deb

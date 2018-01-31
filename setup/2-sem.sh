@@ -7,6 +7,7 @@ set -e
 
 fot_setup_header "fot-sem"
 cd ${BASEDIR}/fot-sem
+pwd
 task install
 export export PATH=/usr/local/lib/fot/bin:$PATH
 fot_setup_ensure_exec "fot-sem"
