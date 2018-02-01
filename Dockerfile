@@ -11,9 +11,9 @@ USER docker
 
 # Define Enviornment Variables
 ENV HOME=/home/docker
-ENV GOROOT=/usr/local/lib/go
+ENV GOROOT=/usr/lib/go-1.9
 ENV GOPATH=$HOME/gocode
-ENV PATH=/usr/local/lib/go/bin:$GOPATH/bin:$HOME/.cargo/bin:/usr/local/lib/fot/bin:$PATH
+ENV PATH=$GOROOT/bin:$GOPATH/bin:$HOME/.cargo/bin:/usr/local/lib/fot/bin:$PATH
 
 # Copy local files into docker image: fot-base-img,
 # target path will be : /home/docker/fot/

@@ -19,10 +19,14 @@ sudo apt-get install -y cmake \
                         realpath \
                         scons \
                         software-properties-common \
-                        python-software-properties
-sudo add-apt-repository ppa:gophers/archive
+                        python-software-properties \
+                        git \
+                        clang-4.0
+
+# TODO add into Dockerfile
+sudo add-apt-repository ppa:gophers/archive -y
 sudo apt-get update
-sudo apt-get install -y golang-go
+sudo apt-get install -y golang-1.9-go
 fot_setup_ensure_exec "go"
 fot_setup_footer "OS-level dependencies"
 
