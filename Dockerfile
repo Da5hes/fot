@@ -20,10 +20,4 @@ ENV PATH=/usr/local/lib/go/bin:$GOPATH/bin:$HOME/.cargo/bin:/usr/local/lib/fot/b
 COPY . $HOME/fot/
 WORKDIR $HOME/fot
 
-# Set up Environment
-RUN ./install.sh
-
 CMD []
-
-
-

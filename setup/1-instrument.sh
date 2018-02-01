@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 _CUR_DIR=$(dirname "$0")
 source ${_CUR_DIR}/common.sh
