@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 red=$(tput setaf 1)
 green=$(tput setaf 2)

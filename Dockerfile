@@ -21,7 +21,7 @@ COPY . $HOME/fot/
 WORKDIR $HOME/fot
 
 # Set up Environment
-RUN bash ./install.sh
+RUN ./install.sh
 
 CMD []
 
