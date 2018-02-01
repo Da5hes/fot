@@ -2,16 +2,20 @@ version: "3.4"
 
 services:
   fot:
-    image: fot-base-img:new
+    image: fot-base-img:latest
     hostname: fot
     environment:
+      - HOME=/home/docker
+      - GOROOT=/usr/lib/go-1.9
+      - GOPATH=/home/docker/gocode
       - JAVA_HOME=/usr/lib/jvm/java-8-oracle
-      - LD_LIBRARY_PATH=$JAVA_HOME/jre/lib/amd64/server
-
-
-
-
-
+      - LD_LIBRARY_PATH=/usr/lib/jvm/java-8-oracle/jre/lib/amd64/server
+      - TEST_TARGET_GZ=libpng-1.6.34.tar.gz
+      - TEST_TARGET=libpng-1.6.34
+    volumes:
+      - ./tests:/home/docker/tests
+    command:
+      - /usr/local/bin/init_fuzz.sh
 
 #services:
 #  redis:
