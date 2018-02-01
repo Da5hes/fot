@@ -17,11 +17,12 @@ sudo apt-get install -y cmake \
                         libc6-dev-i386 \
                         curl \
                         realpath \
-                        scons
-sudo pip install -U virtualenv
+                        scons \
+                        software-properties-common \
+                        python-software-properties
 sudo add-apt-repository ppa:gophers/archive
 sudo apt-get update
-sudo apt-get install golang-1.9-go
+sudo apt-get install -y golang-go
 fot_setup_ensure_exec "go"
 fot_setup_footer "OS-level dependencies"
 

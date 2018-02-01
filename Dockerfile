@@ -2,7 +2,7 @@
 FROM ubuntu:16.04
 
 # Update APT
-RUN apt-get -y update && apt-get -y upgrade
+RUN apt-get -y update
 
 # Prepare sudo user
 RUN apt-get -y install sudo
