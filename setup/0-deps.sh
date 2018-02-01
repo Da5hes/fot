@@ -7,24 +7,21 @@ set -e
 
 fot_setup_header "dependencies"
 fot_setup_header "OS-level dependencies"
-sudo apt install -y cmake python-pip libspdlog-dev \
-                    redis-tools redis-server \
-                    liblzma-dev libhwloc-dev libc6-dev-i386 \
-                    curl realpath scons
+sudo apt-get install -y cmake \
+                        python-pip \
+                        libspdlog-dev \
+                        redis-tools \
+                        redis-server \
+                        liblzma-dev \
+                        libhwloc-dev \
+                        libc6-dev-i386 \
+                        curl \
+                        realpath \
+                        scons
 sudo pip install -U virtualenv
-sudo apt-get purge -y golang-go
-if [ -f "go1.9.3.linux-amd64.tar.gz" ]
-then
-    echo "go1.9.3.linux-amd64.tar.gz already downloaded."
-else
-    sudo wget https://dl.google.com/go/go1.9.3.linux-amd64.tar.gz
-fi
-sudo tar -xvf go1.9.3.linux-amd64.tar.gz
-sudo rm -rf /usr/local/go
-sudo rm -rf /usr/local/lib/go
-sudo mv go /usr/local/lib
-#export GOROOT=/usr/local/lib/go
-#export PATH=/usr/local/lib/go/bin:$PATH
+sudo add-apt-repository ppa:gophers/archive
+sudo apt-get update
+sudo apt-get install golang-1.9-go
 fot_setup_ensure_exec "go"
 fot_setup_footer "OS-level dependencies"
 
