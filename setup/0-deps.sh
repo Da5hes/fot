@@ -7,6 +7,9 @@ set -e
 
 fot_setup_header "dependencies"
 fot_setup_header "OS-level dependencies"
+sudo add-apt-repository ppa:webupd8team/java -y
+sudo add-apt-repository ppa:gophers/archive -y
+sudo apt-get update
 sudo apt-get install -y cmake \
                         python-pip \
                         libspdlog-dev \
@@ -21,11 +24,13 @@ sudo apt-get install -y cmake \
                         software-properties-common \
                         python-software-properties \
                         git \
-                        clang-4.0
+                        clang-4.0 \
+                        oracle-java8-installer
 
-# TODO add into Dockerfile
-sudo add-apt-repository ppa:gophers/archive -y
-sudo apt-get update
+
+sudo ln -sf /usr/bin/clang-4.0 /usr/bin/clang
+sudo ln -sf /usr/bin/clang++-4.0 /usr/bin/clang++
+
 sudo apt-get install -y golang-1.9-go
 fot_setup_ensure_exec "go"
 fot_setup_footer "OS-level dependencies"

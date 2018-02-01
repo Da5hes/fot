@@ -1,10 +1,23 @@
 version: "3.4"
 
 services:
-  redis:
-    image: redis:3
-    hostname: redis
+  fot:
+    image: fot-base-img:new
+    hostname: fot
+    environment:
+      - JAVA_HOME=/usr/lib/jvm/java-8-oracle
+      - LD_LIBRARY_PATH=$JAVA_HOME/jre/lib/amd64/server
 
+
+
+
+
+
+#services:
+#  redis:
+#    image: redis:3
+#    hostname: redis
+#
 #  # PostgreSQL database
 #  db:
 #    image: pg10init
@@ -16,7 +29,7 @@ services:
 #    volumes:
 #      - pgdata:/var/lib/postgresql/data/pgdata
 #      - pgbackup:/pg_backups
-
+#
 #  rabbit:
 #    image: rabbitmq:3-management
 #    hostname: rabbit
@@ -26,7 +39,7 @@ services:
 #    ports:
 #      - "5672:5672"   # forward this port for debugging
 #      - "15672:15672" # here can access rabbitmq management plugin
-
+#
 #  django:
 #    image: djangoenvimg
 #    command: ./run_django.sh
@@ -44,7 +57,7 @@ services:
 #    depends_on:
 #      - db
 #      - rabbit
-
+#
 #  # Celery worker
 #  worker:
 #    image: djangoenvimg
@@ -59,8 +72,8 @@ services:
 #      - rabbit
 #      - redis
 #      - db
-
-# Creates the volume for postgresql database to preserve data during multiple container sessions
-volumes:
+#
+## Creates the volume for postgresql database to preserve data during multiple container sessions
+#volumes:
 #  pgdata:
 #  pgbackup:
