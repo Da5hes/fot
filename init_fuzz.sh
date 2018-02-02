@@ -16,9 +16,9 @@ fot_setup_header "Build Source"
 if [ -f $TEST_TARGET_GZ ]; then
     sudo tar -xvzf $TEST_TARGET_GZ
     cd $TEST_TARGET
-    sudo ./configure CC=fot-clang LDFLAGS="-static" --prefix=$PWD/install
-    sudo make -j
-    sudo make install
+    ./configure CC=fot-clang LDFLAGS="-static" --prefix=$PWD/install
+    make -j
+    make install
 else
     fot_setup_alert "Cannot find file $TEST_TARGET_GZ"
     exit
