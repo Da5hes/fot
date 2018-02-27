@@ -17,8 +17,11 @@ sudo apt-get install -y cmake \
                         libc6-dev-i386 \
                         curl \
                         realpath \
-                        scons
-sudo pip install -U virtualenv
+                        scons\
+                        software-properties-common \
+                        python-software-properties \
+                        git \
+                        clang-4.0
 sudo add-apt-repository ppa:gophers/archive
 sudo apt-get update
 sudo apt-get install golang-1.9-go
