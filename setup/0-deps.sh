@@ -24,12 +24,12 @@ sudo apt-get install -y cmake \
                         software-properties-common \
                         python-software-properties \
                         git \
-                        clang-4.0 \
+                        clang-5.0 \
                         oracle-java8-installer
 
 
-sudo ln -sf /usr/bin/clang-4.0 /usr/bin/clang
-sudo ln -sf /usr/bin/clang++-4.0 /usr/bin/clang++
+sudo ln -sf /usr/bin/clang-5.0 /usr/bin/clang
+sudo ln -sf /usr/bin/clang++-5.0 /usr/bin/clang++
 
 sudo apt-get install -y golang-1.9-go
 fot_setup_ensure_exec "go"
