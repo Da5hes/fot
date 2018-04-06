@@ -61,8 +61,9 @@ Case Study on [libpng](http://www.libpng.org/pub/png/libpng.html)
 
 Update Tips
 ===========
-
+```bash
 git submodule update --remote
 cd fot-fuzz && git checkout master && git pull && cd ..
 cd fot-instrument && git checkout master && git pull && cd ..
 cd fot-sem && git checkout master && git pull && cd ..
+```
