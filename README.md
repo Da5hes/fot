@@ -58,12 +58,3 @@ Case Study on [libpng](http://www.libpng.org/pub/png/libpng.html)
     $ python manage.py runserver 0.0.0.0:8000 --noreload
     $ python manage.py process_tasks
     # need to wait for a while when the charts are plotted
-
-Update Tips
-===========
-```bash
-git submodule update --remote
-cd fot-fuzz && git checkout master && git pull && cd ..
-cd fot-instrument && git checkout master && git pull && cd ..
-cd fot-sem && git checkout master && git pull && cd ..
-```
