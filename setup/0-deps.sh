@@ -5,10 +5,12 @@ source ${_CUR_DIR}/common.sh
 
 set -e
 
+LLVMVER=6.0
+
 fot_setup_header "dependencies"
 fot_setup_header "OS-level dependencies"
 sudo add-apt-repository ppa:webupd8team/java -y
-sudo add-apt-repository ppa:gophers/archive -y
+sudo add-apt-repository ppa:longsleep/golang-backports -y
 sudo apt-get update
 sudo apt-get install -y cmake \
                         python-pip \
@@ -24,14 +26,15 @@ sudo apt-get install -y cmake \
                         software-properties-common \
                         python-software-properties \
                         git \
-                        clang-5.0 \
+                        clang-${LLVMVER} \
                         oracle-java8-installer
 
 
-sudo ln -sf /usr/bin/clang-5.0 /usr/bin/clang
-sudo ln -sf /usr/bin/clang++-5.0 /usr/bin/clang++
+sudo ln -sf /usr/lib/jvm/java-8-oracle/jre/lib/amd64/server/libjvm.so /usr/lib/libjvm.so 
+sudo ln -sf /usr/bin/clang-${LLVMVER} /usr/bin/clang
+sudo ln -sf /usr/bin/clang++-${LLVMVER} /usr/bin/clang++
 
-sudo apt-get install -y golang-1.9-go
+sudo apt-get install -y golang-go
 fot_setup_ensure_exec "go"
 fot_setup_footer "OS-level dependencies"
 
