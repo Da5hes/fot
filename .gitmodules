@@ -1,15 +1,15 @@
 [submodule "fot-fuzz"]
 	path = fot-fuzz
-	url = https://github.com/HongxuChen/fot-fuzz.git
+	url = git@github.com:HongxuChen/fot-fuzz.git
 [submodule "fot-ui"]
 	path = fot-ui
-	url = https://github.com/ThePatrickStar/fot-ui.git
+	url = git@github.com:ThePatrickStar/fot-ui.git
 [submodule "fot-instrument"]
 	path = fot-instrument
-	url = https://github.com/ThePatrickStar/fot-instrument.git
+	url = git@github.com:ThePatrickStar/fot-instrument.git
 [submodule "fot-sem"]
 	path = fot-sem
-	url = https://github.com/HongxuChen/fot-sem.git
+	url = git@github.com:HongxuChen/fot-sem.git
 [submodule "fot-docker-electron"]
 	path = fot-docker-electron
 	url = git@github.com:ntutangyun/fot-docker-electron.git
