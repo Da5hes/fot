@@ -4,9 +4,6 @@
 [submodule "fot-ui"]
 	path = fot-ui
 	url = git@github.com:ThePatrickStar/fot-ui.git
-[submodule "fot-instrument"]
-	path = fot-instrument
-	url = git@github.com:ThePatrickStar/fot-instrument.git
 [submodule "fot-sem"]
 	path = fot-sem
 	url = git@github.com:HongxuChen/fot-sem.git
@@ -16,3 +13,6 @@
 [submodule "fot-frontend-vue"]
 	path = fot-frontend-vue
 	url = git@github.com:ntutangyun/fot-frontend-vue.git
+[submodule "fot-instrument"]
+	path = fot-instrument
+	url = git@github.com:ThePatrickStar/fot-instrument.git
