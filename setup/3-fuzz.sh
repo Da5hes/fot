@@ -3,6 +3,9 @@
 _CUR_DIR=$(dirname "$0")
 source ${_CUR_DIR}/common.sh
 
+# remove, even when there is NO
+sudo apt-get purge fot_tools -y
+
 set -e
 
 # fot-fuzz
