@@ -44,7 +44,7 @@ if ! hash task 2>/dev/null; then
     go get -u -v github.com/go-task/task/cmd/task
     export PATH=$GOPATH/bin:$PATH
     fot_setup_ensure_exec "task"
-    fot_setup_alert "PLEASE 'export PATH=\$GOPATH/bin:$PATH' for permanent uses"
+    fot_setup_alert "PLEASE 'export PATH=\$GOPATH/bin:\$PATH' for permanent uses"
 fi
 fot_setup_ensure_exec "task"
 fot_setup_footer "golang dependencies"
