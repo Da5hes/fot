@@ -2,4 +2,5 @@ export CC=fot-pp
 export CXX=fot-pp++
 export CFLAGS="-g"
 export CXXFLAGS="-g" 
-export ASAN_OPTIONS="detect_odr_violation=0:abort_on_error=1:symbolize=1:detect_leaks=0"
+
+source $(dirname "$0")/FUZZING
