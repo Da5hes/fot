@@ -12,4 +12,4 @@
 	url = git@github.com:ntutangyun/fot-frontend-vue.git
 [submodule "fot-instrument"]
 	path = fot-instrument
-	url = git@github.com:ThePatrickStar/fot-instrument.git
+	url = git@github.com:HongxuChen/fot-instrument.git
