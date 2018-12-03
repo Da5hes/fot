@@ -1,7 +1,5 @@
 unset CC
 unset CXX
-unset CFLAGS
-unset CXXFLAGS
 unset LDFLAGS
 unset ASAN_SYMBOLIZER
 unset TSAN_SYMBOLIZER
@@ -10,3 +8,6 @@ unset LSAN_SYMBOLIZER
 unset UBSAN_SYMBOLIZER
 unset ASAN_OPTIONS
 unset TSAN_OPTIONS
+
+export CFLAGS="-g"
+export CXXFLAGS="-g"
