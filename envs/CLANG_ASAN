@@ -2,4 +2,5 @@ export CC=clang
 export CXX=clang++
 export CFLAGS="-fsanitize=address -g -O3"
 export CXXFLAGS="-fsanitize=address -g -O3" 
-export ASAN_OPTIONS="detect_odr_violation=0:abort_on_error=1:symbolize=0:detect_leaks=0:allocator_may_return_null=1"
+
+source $(dirname "$0")/REPLAY

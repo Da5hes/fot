@@ -2,4 +2,6 @@ export CC=fot-clang
 export CXX=fot-clang++
 export CFLAGS="-fsanitize=address -g"
 export CXXFLAGS="-fsanitize=address -g" 
-export ASAN_OPTIONS="detect_odr_violation=0:abort_on_error=1:symbolize=0:detect_leaks=0:allocator_may_return_null=1"
+export LDFLAGS="-fsanitize=address"
+
+source $(dirname "$0")/FUZZING

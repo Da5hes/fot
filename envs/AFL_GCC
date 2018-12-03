@@ -1,5 +1,5 @@
-export CC=afl-clang-fast
-export CXX=afl-clang-fast++
+export CC=afl-gcc
+export CXX=afl-g++
 export CFLAGS="-fsanitize=address -g"
 export CXXFLAGS="-fsanitize=address -g" 
 export LDFLAGS="-fsanitize=address"
