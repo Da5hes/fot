@@ -1,0 +1,5 @@
+export CC=clang
+export CXX=clang++
+export CFLAGS="-g -O3"
+export CXXFLAGS="-g -O3" 
+export ASAN_OPTIONS="detect_odr_violation=0:abort_on_error=1:symbolize=1:detect_leaks=0:allocator_may_return_null=1"

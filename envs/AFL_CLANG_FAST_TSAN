@@ -1,0 +1,6 @@
+export CC=afl-clang-fast
+export CXX=afl-clang-fast++
+export CFLAGS="-fsanitize=thread -g"
+export CXXFLAGS="-fsanitize=thread -g" 
+export LDFLAGS="-fsanitize=thread"
+export TSAN_OPTIONS="abort_on_error=1:halt_on_error=1:symbolize=0"

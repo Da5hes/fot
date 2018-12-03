@@ -2,4 +2,4 @@ export CC=fot-clang
 export CXX=fot-clang++
 export CFLAGS="-fsanitize=address -g"
 export CXXFLAGS="-fsanitize=address -g" 
-export ASAN_OPTIONS="detect_odr_violation=0:abort_on_error=1:symbolize=0:detect_leaks=0"
+export TSAN_OPTIONS="abort_on_error=1:halt_on_error=1:symbolize=0"

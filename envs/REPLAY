@@ -1,1 +1,12 @@
 export ASAN_OPTIONS="detect_odr_violation=0:abort_on_error=1:symbolize=1:detect_leaks=0"
+if hash llvm-symbolizer 2>/dev/null; then
+    __SYMBOLIZER_PATH=$(realpath $(which llvm-symbolizer))
+    export ASAN_SYMBOLIZER_PATH=${__SYMBOLIZER_PATH}
+    export TSAN_SYMBOLIZER_PATH=${__SYMBOLIZER_PATH}
+    export MSAN_SYMBOLIZER_PATH=${__SYMBOLIZER_PATH}
+    export LSAN_SYMBOLIZER_PATH=${__SYMBOLIZER_PATH}
+    export UBSAN_SYMBOLIZER_PATH=${__SYMBOLIZER_PATH}
+    echo "symbolizer: ${__SYMBOLIZER_PATH}"
+else
+    echo "[!] llvm-symbolizer NOT found"
+fi
