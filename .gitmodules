@@ -7,9 +7,6 @@
 [submodule "fot-sem"]
 	path = fot-sem
 	url = git@github.com:HongxuChen/fot-sem.git
-[submodule "fot-docker-electron"]
-	path = fot-docker-electron
-	url = git@github.com:ntutangyun/fot-docker-electron.git
 [submodule "fot-frontend-vue"]
 	path = fot-frontend-vue
 	url = git@github.com:ntutangyun/fot-frontend-vue.git
