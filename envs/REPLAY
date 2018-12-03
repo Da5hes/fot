@@ -1,3 +1,6 @@
+export ASAN_OPTIONS="detect_odr_violation=0:abort_on_error=1:symbolize=1:detect_leaks=0:allocator_may_return_null=1"
+export TSAN_OPTIONS="abort_on_error=1:halt_on_error=1:symbolize=1"
+
 if hash llvm-symbolizer 2>/dev/null; then
     __SYMBOLIZER_PATH=$(realpath $(which llvm-symbolizer))
     export ASAN_SYMBOLIZER_PATH=${__SYMBOLIZER_PATH}
@@ -9,5 +12,3 @@ if hash llvm-symbolizer 2>/dev/null; then
 else
     echo "[!] llvm-symbolizer NOT found"
 fi
-export ASAN_OPTIONS="detect_odr_violation=0:abort_on_error=1:symbolize=1:detect_leaks=0:allocator_may_return_null=1"
-export TSAN_OPTIONS="abort_on_error=1:halt_on_error=1:symbolize=1"

@@ -1,0 +1,6 @@
+export CC=gcc
+export CXX=g++
+export CFLAGS="-g -O3"
+export CXXFLAGS="-g -O3" 
+
+source $(dirname "$0")/REPLAY

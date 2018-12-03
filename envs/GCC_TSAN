@@ -1,5 +1,5 @@
-export CC=clang
-export CXX=clang++
+export CC=gcc
+export CXX=g++
 export CFLAGS="-fsanitize=thread -g -O3"
 export CXXFLAGS="-fsanitize=thread -g -O3" 
 export LDFLAGS="-fsanitize=thread"

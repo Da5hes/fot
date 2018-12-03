@@ -2,5 +2,6 @@ export CC=afl-clang
 export CXX=afl-clang++
 export CFLAGS="-fsanitize=thread -g"
 export CXXFLAGS="-fsanitize=thread -g" 
-export LDFLAGS="-fsanitize=thread -g"
-export TSAN_OPTIONS="abort_on_error=1:halt_on_error=1:symbolize=0"
+export LDFLAGS="-fsanitize=thread"
+
+source $(dirname "$0")/FUZZING

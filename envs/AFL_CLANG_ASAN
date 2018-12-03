@@ -2,6 +2,6 @@ export CC=afl-clang
 export CXX=afl-clang++
 export CFLAGS="-fsanitize=address -g"
 export CXXFLAGS="-fsanitize=address -g" 
-export LDFLAGS="-fsanitize=address -g"
+export LDFLAGS="-fsanitize=address"
 
 source $(dirname "$0")/FUZZING
