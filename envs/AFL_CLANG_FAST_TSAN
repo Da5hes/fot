@@ -3,3 +3,5 @@ export CXX=afl-clang-fast++
 export CFLAGS="-fsanitize=thread -g"
 export CXXFLAGS="-fsanitize=thread -g" 
 export LDFLAGS="-fsanitize=thread"
+
+source $(dirname "$0")/FUZZING
