@@ -1,0 +1,6 @@
+export CC=clang
+export CXX=clang++
+export CFLAGS="-g -O0"
+export CXXFLAGS="-g -O0" 
+
+source $(dirname "$0")/REPLAY
