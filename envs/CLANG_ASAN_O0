@@ -2,5 +2,6 @@ export CC=clang
 export CXX=clang++
 export CFLAGS="-fsanitize=address -g -O0"
 export CXXFLAGS="-fsanitize=address -g -O0" 
+export LDFLAGS="-fsanitize=address"
 
 source $(dirname "$0")/REPLAY
