@@ -4,4 +4,5 @@ export CFLAGS="-g"
 export CXXFLAGS="-g" 
 unset LDFLAGS
 
-source $(dirname "$0")/FUZZING
+SCRIPTPATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source $SCRIPTPATH/FUZZING

@@ -1,7 +1,8 @@
 export CC=fot-clang
 export CXX=fot-clang++
-export CFLAGS="-fsanitize=thread -g"
-export CXXFLAGS="-fsanitize=thread -g" 
+export CFLAGS="$FOT_FLAGS -fsanitize=thread -g"
+export CXXFLAGS="$FOT_FLAGS -fsanitize=thread -g" 
 export LDFLAGS="-fsanitize=thread"
 
-source $(dirname "$0")/FUZZING
+SCRIPTPATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source $SCRIPTPATH/FUZZING

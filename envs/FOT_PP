@@ -3,5 +3,7 @@ export CXX=fot-pp++
 export CFLAGS="-g"
 export CXXFLAGS="-g" 
 unset LDFLAGS
+export FOT_USE_GLLVM=1
 
-source $(dirname "$0")/FUZZING
+SCRIPTPATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source $SCRIPTPATH/FUZZING
