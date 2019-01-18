@@ -4,5 +4,5 @@ export CFLAGS="$FOT_FLAGS -fsanitize=thread -g"
 export CXXFLAGS="$FOT_FLAGS -fsanitize=thread -g" 
 export LDFLAGS="-fsanitize=thread"
 
-SCRIPTPATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+SCRIPTPATH="$(realpath $(dirname "$0"))"
 source $SCRIPTPATH/FUZZING

@@ -4,5 +4,5 @@ export CFLAGS="-fsanitize=address -g -O0"
 export CXXFLAGS="-fsanitize=address -g -O0" 
 export LDFLAGS="-fsanitize=address"
 
-SCRIPTPATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+SCRIPTPATH="$(realpath $(dirname "$0"))"
 source $SCRIPTPATH/FUZZING
