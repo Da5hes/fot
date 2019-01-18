@@ -1,0 +1,2 @@
+export FOT_NO_AFFINITY=1
+export AFL_NO_AFFINITY=1
