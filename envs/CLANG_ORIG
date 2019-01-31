@@ -1,0 +1,8 @@
+export CC=clang
+export CXX=clang++
+export CFLAGS="-g"
+export CXXFLAGS="-g" 
+unset LDFLAGS
+
+SCRIPTPATH="$(realpath $(dirname "$0"))"
+source $SCRIPTPATH/FUZZING

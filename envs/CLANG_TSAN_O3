@@ -5,4 +5,4 @@ export CXXFLAGS="-fsanitize=thread -g -O3"
 export LDFLAGS="-fsanitize=thread"
 
 SCRIPTPATH="$(realpath $(dirname "$0"))"
-source $SCRIPTPATH/FUZZING
+source $SCRIPTPATH/REPLAY
