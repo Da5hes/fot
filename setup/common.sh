@@ -6,6 +6,7 @@ yellow=$(tput setaf 3)
 reset=`tput sgr0`
 
 BASEDIR=$(realpath $(dirname "$0")/..)
+export LLVM_DIR=/usr/lib/llvm
 
 function fot_setup_header() {
     echo -e "\n${green}[x] setup $1...${reset}"
