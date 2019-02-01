@@ -39,6 +39,7 @@ update-alternatives --install /usr/bin/clang clang /usr/bin/clang-$VER $PRIORITY
 update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-$VER $PRIORITY
 update-alternatives --install /usr/bin/llvm-config llvm-config /usr/bin/llvm-config-$VER $PRIORITY
 update-alternatives --install /usr/bin/llvm-link llvm-link /usr/bin/llvm-link-$VER $PRIORITY
+update-alternatives --install /usr/bin/llvm-symbolizer llvm-symbolizer /usr/bin/llvm-symbolizer-$VER $PRIORITY
 ln -sf $LLVM_LIB_DIR-$VER $LLVM_LIB_DIR
 
 set +e

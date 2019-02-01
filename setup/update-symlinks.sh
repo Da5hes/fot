@@ -23,6 +23,7 @@ update-alternatives --set clang /usr/bin/clang-$VER
 update-alternatives --set clang++ /usr/bin/clang++-$VER
 update-alternatives --set llvm-config /usr/bin/llvm-config-$VER
 update-alternatives --set llvm-link /usr/bin/llvm-link-$VER
+update-alternatives --set llvm-symbolizer /usr/bin/llvm-symbolizer-$VER
 ln -sf $LLVM_LIB_DIR-$VER $LLVM_LIB_DIR
 
 set +e
