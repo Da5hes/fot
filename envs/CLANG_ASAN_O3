@@ -5,4 +5,4 @@ export CXXFLAGS="-fsanitize=address -g -O3"
 export LDFLAGS="-fsanitize=address"
 
 SCRIPTPATH="$(realpath $(dirname "$0"))"
-source $SCRIPTPATH/FUZZING
+source $SCRIPTPATH/REPLAY

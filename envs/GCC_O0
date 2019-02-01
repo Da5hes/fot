@@ -1,5 +1,5 @@
-export CC=clang
-export CXX=clang++
+export CC=gcc
+export CXX=g++
 export CFLAGS="-g -O0"
 export CXXFLAGS="-g -O0" 
 unset LDFLAGS

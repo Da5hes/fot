@@ -1,5 +1,5 @@
-export CC=clang
-export CXX=clang++
+export CC=gcc
+export CXX=g++
 export CFLAGS="-fsanitize=address -g -O0"
 export CXXFLAGS="-fsanitize=address -g -O0" 
 export LDFLAGS="-fsanitize=address"

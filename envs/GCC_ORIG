@@ -1,7 +1,7 @@
 export CC=gcc
 export CXX=g++
-export CFLAGS="-g -O3"
-export CXXFLAGS="-g -O3" 
+export CFLAGS="-g"
+export CXXFLAGS="-g" 
 unset LDFLAGS
 
 SCRIPTPATH="$(realpath $(dirname "$0"))"

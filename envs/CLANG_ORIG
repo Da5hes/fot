@@ -5,4 +5,4 @@ export CXXFLAGS="-g"
 unset LDFLAGS
 
 SCRIPTPATH="$(realpath $(dirname "$0"))"
-source $SCRIPTPATH/FUZZING
+source $SCRIPTPATH/REPLAY
