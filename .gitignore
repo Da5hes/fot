@@ -2,3 +2,4 @@ tests/
 log/
 .idea/
 fot-frontend-vue
+BUILD_RELDBG/
