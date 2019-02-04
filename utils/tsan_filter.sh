@@ -10,7 +10,7 @@ for f in *.res; do
     if [[ $? -eq 0 ]]; then
         rg 'libomp|omp_outlined' $f &>/dev/null
         if [[ $? -ne 0 ]]; then
-            echo "${red}Y{reset} $f"
+            echo "${red}Y${reset} $f"
         else
             # because of tsan FP
             echo "${yellow}N${reset} $f"
