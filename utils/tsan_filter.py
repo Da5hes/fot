@@ -5,9 +5,17 @@ import sys
 import subprocess
 import shutil
 
+def touch(fname, times=None):
+    with open(fname, 'a'):
+        os.utime(fname, times)
+
+
 if len(sys.argv) < 2:
     print("usage: {} pattern".format(sys.argv[0]), file=sys.stderr)
     sys.exit(1)
+
+if not os.path.isfile(sys.argv[1]):
+    touch(sys.argv[1])
 
 with open(sys.argv[1], 'r') as pat_file:
     pat_lines = pat_file.read().splitlines()
