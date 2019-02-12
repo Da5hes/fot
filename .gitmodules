@@ -1,15 +1,19 @@
 [submodule "fot-fuzz"]
 	path = fot-fuzz
 	url = git@github.com:HongxuChen/fot-fuzz.git
+	branch = master
 [submodule "fot-ui"]
 	path = fot-ui
 	url = git@github.com:ThePatrickStar/fot-ui.git
+	branch = master
 [submodule "fot-sem"]
 	path = fot-sem
 	url = git@github.com:HongxuChen/fot-sem.git
 [submodule "fot-instrument"]
 	path = fot-instrument
 	url = git@github.com:HongxuChen/fot-instrument.git
+	branch = master
 [submodule "SVF"]
 	path = SVF
 	url = git@github.com:HongxuChen/SVF.git
+	branch = fot
