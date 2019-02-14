@@ -11,7 +11,7 @@ def touch(fname, times=None):
 
 
 if len(sys.argv) < 2:
-    print("usage: {} pattern".format(sys.argv[0]), file=sys.stderr)
+    print("usage: {} pattern [-no-omp]".format(sys.argv[0]), file=sys.stderr)
     sys.exit(1)
 
 if not os.path.isfile(sys.argv[1]):
@@ -20,7 +20,12 @@ if not os.path.isfile(sys.argv[1]):
 with open(sys.argv[1], 'r') as pat_file:
     pat_lines = pat_file.read().splitlines()
 pat_lines = list(filter(None, pat_lines))
-pat_lines.extend(['libomp', 'omp_outlined'])
+
+if len(sys.argv) == 3 and sys.argv[2] == "-no-omp":
+    libomp_relevant=['libomp', 'omp_outlined']
+else:
+    libomp_relevant=[]
+pat_lines.extend(libomp_relevant)
 pat_strs = "|".join(pat_lines)
 print("=" * 80 + "\n" + pat_strs + "\n" + "=" * 80)
 
@@ -33,6 +38,7 @@ for root, dirs, files in os.walk('.'):
             continue
         fname = os.path.join(root, f)
         cmd_match_tsan = "rg -a -l {} {}".format("ThreadSanitizer", fname)
+        # print(cmd_match_tsan)
         rc_match_tsan = subprocess.call(cmd_match_tsan.split(), stdout=FNULL, stderr=FNULL)
         if rc_match_tsan != 0:
             print("NO TSAN report; removing... {}".format(fname))

@@ -12,6 +12,9 @@ fi
 REPLAY_DIR=$1
 LOGFILE=$2
 
+export LD_LIBRARY_PATH=/home/ubuntu/work/openmp/openmp-4-install/lib
+# export LD_LIBRARY_PATH=/home/ubuntu/work/openmp/openmp-7-install/lib
+
 for f in $REPLAY_DIR/*; do 
     ext="${f##*.}";
     if [[ "$ext" == "$EXT" ]]; then
