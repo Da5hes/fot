@@ -5,7 +5,7 @@ source ${_CUR_DIR}/common.sh
 
 set -e
 
-LLVMVER=6.0
+LLVMVER=7
 
 fot_setup_header "dependencies"
 fot_setup_header "OS-level dependencies"
