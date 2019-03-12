@@ -1,0 +1,8 @@
+export CC=afl-clang-fast
+export CXX=afl-clang-fast++
+export CFLAGS="-fsanitize=memory -g"
+export CXXFLAGS="-fsanitize=memory -g" 
+export LDFLAGS="-fsanitize=memory -g"
+
+SCRIPTPATH="$(realpath $(dirname "$0"))"
+source $SCRIPTPATH/FUZZING
