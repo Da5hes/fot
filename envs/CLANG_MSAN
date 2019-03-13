@@ -1,0 +1,8 @@
+export CC=clang
+export CXX=clang++
+export CFLAGS="-fsanitize=memory -g"
+export CXXFLAGS="-fsanitize=memory -g" 
+export LDFLAGS="-fsanitize=memory"
+
+SCRIPTPATH="$(realpath $(dirname "$0"))"
+source $SCRIPTPATH/REPLAY

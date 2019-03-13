@@ -1,0 +1,11 @@
+echo "As of GCC-7, there is NO MSAN support"
+return
+
+export CC=gcc
+export CXX=g++
+export CFLAGS="-fsanitize=memory -g"
+export CXXFLAGS="-fsanitize=memory -g" 
+export LDFLAGS="-fsanitize=memory -g"
+
+SCRIPTPATH="$(realpath $(dirname "$0"))"
+source $SCRIPTPATH/REPLAY

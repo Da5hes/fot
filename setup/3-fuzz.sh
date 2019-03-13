@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+rustup override set nightly-2019-03-13
+
 _CUR_DIR=$(dirname "$0")
 source ${_CUR_DIR}/common.sh
 
