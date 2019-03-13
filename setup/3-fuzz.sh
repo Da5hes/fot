@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-rustup override set nightly-2019-03-13
-
 _CUR_DIR=$(dirname "$0")
 source ${_CUR_DIR}/common.sh
 
@@ -13,6 +11,7 @@ set -e
 # fot-fuzz
 fot_setup_header "fot-fuzz"
 cd ${BASEDIR}/fot-fuzz
+rustup override set nightly-2019-03-13
 cargo clean
 task install && task test
 fot_setup_footer "fot-fuzz"
