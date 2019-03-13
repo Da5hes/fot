@@ -20,7 +20,7 @@ fi
 BASEDIR=$(realpath $(dirname "$0")/..)
 
 function fot_setup_header() {
-    echo -e "\n${green}[x] setup $1...${reset}"
+    echo -e "\n${green}[+] setup $1...${reset}"
 }
 
 function fot_setup_footer() {
