@@ -5,11 +5,11 @@ export CXXFLAGS="-g"
 unset LDFLAGS
 export FOT_USE_GLLVM=1
 
-LLVM_VER=7
-export LLVM_CC_NAME=clang-${LLVM_VER}
-export LLVM_CXX_NAME=clang++-${LLVM_VER}
-export LLVM_AR_NAME=llvm-ar-${LLVM_VER}
-export LLVM_LINK_NAME=llvm-link-${LLVM_VER}
+LLVMVER=7
+export LLVM_CC_NAME=clang-${LLVMVER}
+export LLVM_CXX_NAME=clang++-${LLVMVER}
+export LLVM_AR_NAME=llvm-ar-${LLVMVER}
+export LLVM_LINK_NAME=llvm-link-${LLVMVER}
 
 SCRIPTPATH="$(realpath $(dirname "$0"))"
 source $SCRIPTPATH/FUZZING
