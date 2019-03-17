@@ -10,8 +10,6 @@ if [[ $os != "18.04" ]] || [[ $os != "16.04" ]]; then
     echo "unsupported OS version: $os"
 fi
 
-LLVMVER=7
-
 fot_setup_header "dependencies"
 fot_setup_header "OS-level dependencies"
 
@@ -35,6 +33,7 @@ sudo apt-get install -y cmake \
                         scons \
                         git \
                         clang-${LLVMVER} \
+                        libclang-common-${LLVMVER}-dev \
                         oracle-java8-installer
 
 if [[ $os == "16.04" ]]; then

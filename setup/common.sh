@@ -5,12 +5,12 @@ green=$(tput setaf 2)
 yellow=$(tput setaf 3)
 reset=`tput sgr0`
 
-LLVM_VER=7
+LLVMVER=7
 
-if [[ -z ${LLVM_VER} ]]; then
+if [[ -z ${LLVMVER} ]]; then
     export LLVM_DIR=/usr/lib/llvm
 else
-    export LLVM_DIR=/usr/lib/llvm-${LLVM_VER}
+    export LLVM_DIR=/usr/lib/llvm-${LLVMVER}
 fi
 
 if [[ ! -d ${LLVM_DIR} ]]; then

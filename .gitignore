@@ -1,6 +1,8 @@
 tests/
 log/
 .idea/
+/exp/
 fot-frontend-vue
-BUILD_RELDBG/
-exp/
+RELDBG/
+RELEASE/
+DEBUG/

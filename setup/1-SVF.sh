@@ -8,12 +8,12 @@ source ${_CUR_DIR}/common.sh
 # SVF
 fot_setup_header "SVF"
 cd ${BASEDIR}/SVF
-BUILDDIR=${BASEDIR}/SVF/BUILD_RELDBG
+BUILDDIR=${BASEDIR}/SVF/RELDBG
 if ! [[ -d $BUILDDIR ]]; then
     mkdir $BUILDDIR
 fi
 cd $BUILDDIR
-cmake -GNinja -DSVF_BUILD_PIC_LIBS=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo ${BASEDIR}/SVF
+cmake -GNinja -DSVF_BUILD_PIC_LIBS=1 -DCMAKE_C_COMPILER="/usr/bin/clang-${LLVMVER}" -DCMAKE_CXX_COMPILER="/usr/bin/clang++-${LLVMVER}" -DCMAKE_BUILD_TYPE=RelWithDebInfo ${BASEDIR}/SVF
 ninja
 sudo ninja install
 cd ${BASEDIR}

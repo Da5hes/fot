@@ -10,7 +10,7 @@ fi
 PRIORITY=10
 
 if [ "$#" -lt 1 ]; then
-    echo "usage: $0 LLVM_VER [PRIORITY]"
+    echo "usage: $0 LLVMVER [PRIORITY]"
     exit 1
 elif [ "$#" -eq 1 ]; then
     echo "Default priority: $PRORITY"
