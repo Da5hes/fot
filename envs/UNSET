@@ -1,6 +1,5 @@
 unset CC
 unset CXX
-unset LDFLAGS
 unset ASAN_SYMBOLIZER
 unset TSAN_SYMBOLIZER
 unset MSAN_SYMBOLIZER
@@ -9,8 +8,9 @@ unset UBSAN_SYMBOLIZER
 unset ASAN_OPTIONS
 unset TSAN_OPTIONS
 
-export CFLAGS="-g"
-export CXXFLAGS="-g"
+unset CFLAGS
+unset CXXFLAGS
+unset LDFLAGS
 
-export AFL_NO_AFFINITY=1
-export FOT_NO_AFFINITY=1
+unset AFL_NO_AFFINITY
+unset FOT_NO_AFFINITY
